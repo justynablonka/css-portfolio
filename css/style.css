@@ -3,129 +3,116 @@
 }
 
 body {
-    margin: 0 !important;
-    padding: 0 !important;
+    margin: 0 0 !important;
+    padding: 0 0 !important;
     background-color: #f2f1ed;
     font-family: 'Open Sans', sans-serif;
 }
 
 .container {
     display: flex;
-    width: 100vw;
+    align-items: center;
+    width: 100%;
     max-width: 1170px;
     flex-direction: column;
+    margin: 0 auto;
 }
 
 section {
-    width: 100vw;
     position: relative;
+    padding: 120px 0px;
 }
 
-.top-section {
+.main-header {
     height: 70vh;
     display: flex;
-    flex-flow: column wrap;
     background-image: url('../img/header.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    text-align: center;
     align-items: center;
     justify-content: center;
 }
 
-.main-header {
+.main-header-content {
+    text-align: center;
+}
+
+.main-header-content h1{
     font-size: 4.2em;
     color: #007bff;
-    transition: all 0.5s;
-}
-
-header {
-    width: 100%;
-    margin: 40px 0px 30px 0px;
-    position: relative;
     text-transform: uppercase;
-    color: #333;
+    margin: 0;
 }
 
-.top-section > p {
-    font-size: 1.3em;
-    color: #333;
+.main-header .main-header-content p {
     width: 100%;
+    color: #333;
+    font-size: 1.3em;
+    margin: 40px 0;
     text-align: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    transition: all 0.5s;
+}
+
+.section-header {
+    margin-bottom: 60px;
 }
 
 .button {
     display: inline-block;
-    justify-content: center;
     font-size: 1em;
     max-width: 50%;
     height: 50px;
-    padding: 15px 15px 15px 15px;
-    margin-bottom: 60px;
+    padding: 15px 15px;
+    color: #333;
+    text-decoration: none;
     border: #007bff solid 1px;
     background-color: transparent;
     text-transform: uppercase;
-    transition: all 0.4s;
-}
-
-.button a {
-    color: #333;
-    text-decoration: none;
+    transition: all .3s;
 }
 
 .button:hover {
     cursor: pointer;
-    background-color: #007bff;
-    transition: all 0.5s;
-}
-.button:hover a {
     color: #ffffff;
+    background-color: #007bff;
 }
-
-
 
 #collapsible-menu,
-label {
+label[for="collapsible-menu"] {
     display: none;
 }
 
 .menu {
-    position: relative;
     display: flex;
     flex-flow: column wrap;
     align-content: center;
     justify-content: center;
+    position: relative;
     background-color: #007bff;
-    width: 100vw;
-    height: 65px;
+    width: 100%;
+    /* height: 70px; */
     text-transform: uppercase;
 }
 
-.menu > .menu-content > ul > li {
+.menu-item {
+    margin: 0 10px;
     display: inline-block;
-    padding: 10px 20px 10px 20px;
-    margin: 10px;
-    transition: all 0.4s;
 }
 
-.menu > .menu-content > ul > li:hover {
-    cursor: pointer;
+.menu-item a {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    transition: all .3s;
+}
+
+.menu-item a:hover {
     background-color: white;
     color: #007bff;
 }
 
-.menu > .menu-content > ul > li:hover a {
-    color: #007bff;
-}
-
-a {
-    color: #ffffff;
-    text-decoration: none;
-}
 
 .dot {
     display: inline-block;
@@ -142,58 +129,48 @@ a {
     border-bottom: 0;
 }
 
-.section-header {
+.section-header h2 {
     font-size: 1.9em;
     color: #333;
     text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
 }
 
 .about {
     background-color: #ffffff;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 90px 0px 60px 0px;
+    text-align: center;
 }
 
 .about-img {
-    margin: 60px 0px 20px 0px;
-    max-width: 20%;
+    margin-bottom: 30px;
     border-radius: 50%;
 }
 
-.about > p {
+.about p {
     color: #777;
-    text-align: center;
-    width: 100%;
-    margin: 15px 15px 30px 0px;
     max-width: 700px;
     line-height: 1.4;
 }
 
+.about .button {
+    margin-top: 40px;
+}
+
 .portfolio {
-    width: 100vw;
-    display: flex;
-    flex-flow: row wrap;
     position: relative;
-    justify-content: center;
-    padding: 90px 0px 120px 0px;
 }
 
 .portfolio-gallery {
-    /* display: inline-block; */
-    width: 80%;
-    justify-content: center;
-    align-items: center;
-    margin: 60px 0px 0px 180px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
 }
 
 .portfolio-element {
-    display: inline-block;
-    margin: -5px;
     position: relative;
-    width: 18vw;
+    width: 25%;
     max-width: 100%;
 }
 
@@ -202,11 +179,7 @@ a {
     height: 100%;
 }
 
-.portfolio-element:hover {
-    cursor: pointer;
-}
-
-.portfolio-element > h3 {
+.portfolio-element h3 {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -214,38 +187,24 @@ a {
     left: 0;
     margin: 0;
     background-color: #007bffcc;
+    color: #ffffff;
     text-align: center;
     line-height: 200px;
-    font-weight: 20;
+    font-weight: 300;
     font-size: 3em;
     opacity: 0;
-    transition: all 0.3s;
 }
 
-.portfolio-element > h3:hover {
-    display: inline-block;
-    cursor: pointer;
-    color: #ffffff;
+.portfolio-element h3:hover {
     opacity: 1;
-    transition: all 0.5s ease;
-}
-
-.portfolio-element:hover .portfolio-element > img {
-    display: inline-block;
-    cursor: pointer;
-    background-color: #007bffcc;
-    color: #ffffff;
-    opacity: 0.5;
-    transition: all 0.5s ease;
+    transition: all 0.4s;
 }
 
 .contact {
     background-color: #ffffff;
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
     position: relative;
-    padding: 60px 0px 60px 0px;
 }
 
 form {
@@ -254,7 +213,6 @@ form {
     justify-content: space-around;
     max-width: 700px;
     width: 70%;
-    padding: 60px 0px 0px 0px;
 }
 
 input[type="text"],
@@ -263,11 +221,14 @@ input[type="email"] {
     width: 48%;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.1em;
-    margin: 0px 0px 15px 10px;
 }
 
 input[type="text"] {
     margin: 0px 15px 15px 0px;
+}
+
+input[type="email"] {
+    margin: 0px 0px 15px 10px;
 }
 
 #message
@@ -278,12 +239,6 @@ input[type="text"] {
     padding: 10px 10px;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.1em;
-}
-
-input [type="submit"]
-{
-    position: absolute;
-    font-family: 'Open Sans', sans-serif;
 }
 
 .social-media {
@@ -297,31 +252,27 @@ input [type="submit"]
     text-align: center;
     color: #007bff;
     justify-content: space-around;
-    margin: 0px 20px 20px 20px;
+    margin: 60px 20px 0px 20px;
     font-size: 2.3em;
-    transition: all 0.4s;
+    transition: all .3s;
 }
 
 .social-media i:hover {
     color: #777;
-    transition: all 0.4s;
+    transition: all .3s;
 }
 
 footer {
     height: 10vh;
-    width: 100vw;
-    padding: 20px 20px 20px 20px;
+    width: 100%;
+    padding: 20px 20px;
     text-align: center;
     color: #777;
 }
 
-
 @media screen and (max-width: 1200px) {
     .container {
         max-width: 992px;
-    }
-    .portfolio-element > h3 {
-        font-size: 1.8em;
     }
 }
 
@@ -329,22 +280,19 @@ footer {
     .container {
         max-width: 768px;
     }
-    .portfolio-gallery {
-        margin: 60px 0px 0px -60px;
-    }
+
     .portfolio-element {
         width: 50%;
     }
-    input[type="text"],
+
     input[type="email"] {
         width: 48%;
-        margin: 0px 0px 15px 0px;
+        margin: 15px 0px 15px 0px;
     }
+
     input[type="text"] {
-        margin: 0px 15px 15px 0px;
-    }
-    .portfolio-element > h3 {
-        font-size: 1.8em;
+        width: 48%;
+        margin: 15px 15px 15px 0px;
     }
 }
 
@@ -352,14 +300,15 @@ footer {
     .container {
         max-width: 95%;
     }
-    .top-section {
-        background-size: cover;
+
+    .portfolio-element {
+        width: 100%;
     }
-    .portfolio-gallery {
-        width: 100vw;
-    }
-    .portfolio-element > h3 {
-        font-size: 1.8em;
+
+    input[type="text"],
+    input[type="email"] {
+        width: 100%;
+        margin: 0px 0px 15px 0px;
     }
 }
 
@@ -368,21 +317,8 @@ footer {
     body {
         max-width: 95%;
     }
-    
-    .top-section {
-        background-size: cover;
-        background-position: -170px ;
-    }
 
-    .line {
-        width: 10vh;
-        left: 43%;
-        top: 100%;
-        border-bottom: 1px solid #007bff;
-        position: absolute;
-        }
-
-    .top-header {
+    .main-header .main-header-content h1 {
         font-size: 3em;
     }
 
@@ -391,42 +327,50 @@ footer {
         max-width: 250px;
     }
 
-    .menu-content {
-        max-height: 0;
+    .menu {
+        height: 70px;
+        position: relative;
     }
 
-    label {
+    .menu ul {
+        display: none;
+    }
+
+    label[for="collapsible-menu"] {
         display: block;
-        position: absolute;
         text-align: right;
         text-transform: uppercase;
         width: 100%;
         height: 100%;
-        padding: 15px 10px 10px 10px;
+        padding: 15px 15px;
         cursor: pointer;
         color: #ffffff;
         font-size: 1.5em;
     }
 
-    input:checked ~ .menu-content > ul > li {
+    #collapsible-menu:checked + ul {
         display: block;
+        width: 100%;
         background-color: #007bff;
-        max-height: 100%;
+        position: absolute;
+        bottom: 50px;
+        right: 0;
+    }
+
+    #collapsible-menu:checked ~ ul .menu-item {
+        display: block;
         text-align: right;
-
+        padding: 10px 0px;
+        margin: 0;
     }
 
-    .portfolio {
-        text-align: center;
+    #collapsible-menu:checked ~ ul .menu-item a {
+        margin-right: -10px;
     }
 
-    .portfolio-element {
-        width: 100%;
-    }
-
-    input[type="text"],
-    input[type="email"] {
-        width: 100%;
-        margin: 0px 0px 15px 0px;
+    .button {
+        font-size: 0.9em;
+        padding: 15px 15px;
+        overflow: hidden;
     }
 }
